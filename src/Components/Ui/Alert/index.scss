@@ -1,0 +1,70 @@
+$errBorderColor: rgba(255, 25, 0, 0.357);
+$errBgColor: rgba(255, 25, 0, 0.158);
+$errColor: #ff9b9b;
+$errLink: #fecaca;
+
+$infoBorderColor: rgba(0, 110, 255, 0.372);
+$infoBgColor: rgba(0, 110, 255, 0.158);
+$infoColor: #9bcaff;
+$infoLink: #e3f0ff;
+
+$warnBorderColor: rgba(255, 242, 0, 0.357);
+$warnBgColor: rgba(255, 234, 0, 0.158);
+$warnColor: #ffe89b;
+$warnLink: #fff4d2;
+
+$successBorderColor: rgba(0, 255, 0, 0.322);
+$successBgColor:rgba(41, 246, 9, 0.215);
+$successColor:  #7acf58d6;
+$successLink:  #d2ffc1d6;
+
+$defaultBorderColor: rgba(255, 255, 255, 0.79);
+$defaultBgColor: rgba(255, 255, 255, 0.17);
+$defaultColor: #b0acacee;
+$defaultLink: #ffffffee;
+
+@mixin alert($name ,$borderColor,$bgColor,$color,$link ){
+    .#{$name} {
+        border: 2px dotted $borderColor;
+        border-radius: 0.8rem;
+        padding: 1.3rem;
+        background-color: $bgColor;
+        color: $color;
+        margin-bottom: 0.9rem;
+        .alert-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    
+        .title {
+            display: flex;
+            align-items: center;
+    
+            svg {
+                margin-right: 0.8rem;
+            }
+        }
+    
+        p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.5rem;
+            margin-top: 0.6rem;
+        }
+        .close{
+            cursor: pointer;
+        }
+        a{
+            color: $link;
+            font-weight: 600;
+        }
+    }
+}
+
+
+@include alert('err',$errBorderColor ,$errBgColor ,$errColor,$errLink );
+@include alert('info',$infoBorderColor ,$infoBgColor ,$infoColor,$infoLink );
+@include alert('warn',$warnBorderColor ,$warnBgColor ,$warnColor ,$warnLink);
+@include alert('success',$successBorderColor ,$successBgColor ,$successColor,$successLink );
+@include alert('default',$defaultBorderColor ,$defaultBgColor ,$defaultColor,$defaultLink );
