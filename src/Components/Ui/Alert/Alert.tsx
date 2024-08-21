@@ -1,9 +1,10 @@
 import { X } from 'lucide-react'
 import './index.scss'
 import { ReactNode } from 'react'
+import { AlertType } from '../../Types/Types'
 
 interface IProps {
-  type: string,
+  type: AlertType,
   icon: ReactNode,
   title: string,
   description?: string
